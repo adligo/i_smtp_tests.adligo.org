@@ -1,3 +1,4 @@
 Date,Package,Coverage,Instructions
-5/13/2013,org.adligo.i.smtp,19.9%,528
-5/13/2013,org.adligo.i.smtp.authenticators,0.0%,126
+5/13/2013,org.adligo.i.smtp,15.3%,685
+5/13/2013,org.adligo.i.smtp.authenticators,0.0%,243
+5/13/2013,org.adligo.i.smtp.models,0.0%,120
