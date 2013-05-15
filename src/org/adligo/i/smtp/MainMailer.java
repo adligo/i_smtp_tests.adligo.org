@@ -12,6 +12,8 @@ import org.adligo.i.pool.Pool;
 import org.adligo.i.smtp.authenticators.SmtpLoginAuthenticator;
 import org.adligo.i.smtp.authenticators.SmtpUserPassword;
 import org.adligo.i.smtp.models.EMailMessageMutant;
+import org.adligo.i.smtp.models.LocalFileEmailAttachment;
+import org.adligo.i.util.client.StringUtils;
 import org.adligo.jse.util.JSECommonInit;
 import org.adligo.models.core.client.EMailAddress;
 import org.adligo.models.core.client.InvalidParameterException;
@@ -36,6 +38,8 @@ public class MainMailer {
 
 		String from = "from_user@example.com";
 		String to = "user@example.com";
+		String cc = "";
+		String bcc = "";
 		String fileName = "";
 		if (args.length == 1) {
 			try {
@@ -53,7 +57,8 @@ public class MainMailer {
 				config.setCredentials(new SmtpUserPassword(user, pass));
 				to = props.getProperty("to");
 				from = props.getProperty("from");
-				
+				cc = props.getProperty("cc");
+				bcc = props.getProperty("bcc");
 			} catch (FileNotFoundException fif) {
 				log.error(fif.getMessage(), fif);
 				return;
@@ -67,12 +72,20 @@ public class MainMailer {
 		try {
 			message.setFrom(new EMailAddress(from));
 			message.addTo(new EMailAddress(to));
-			message.setSubject("Hi from Eclipse");
-			message.setBody("This is a really\n" +
-					"nice email api. The file was " + fileName + "\n" +
-					"\n" +
-					"Cheers,\n" +
-					"Scott");
+			if (!StringUtils.isEmpty(cc)) {
+				message.addCc(new EMailAddress(cc));
+			}
+			if (!StringUtils.isEmpty(bcc)) {
+				message.addBcc(new EMailAddress(bcc));
+			}
+			message.setSubject("Hi from Eclipse 13");
+			message.setHtmlBody(true);
+			message.setBody("<HTML><BODY>Hey this is a html email :)<br>" +
+					"<img src=\"http://www.argon-evolution.com/ScottMorgan/scott2.gif\"> " +
+					"<br><br>" +
+					"Cheers<br>Scott<br>");
+			//message.addAttachment(new LocalFileEmailAttachment("TestCoverage.txt","text/plain"));
+			//message.addAttachment(new LocalFileEmailAttachment("scott2.gif","image/gif"));
 		} catch (InvalidParameterException ipe) {
 			log.error(ipe.getMessage(), ipe);
 			return;
