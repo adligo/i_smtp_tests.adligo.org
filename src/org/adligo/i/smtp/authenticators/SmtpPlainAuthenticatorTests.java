@@ -34,6 +34,11 @@ public class SmtpPlainAuthenticatorTests extends ATest {
 				}
 				return new String[] {};
 			}
+			
+			@Override
+			public void onCommandPart(String p) {
+				
+			}
 		});
 		SmtpUserPassword userPass = new SmtpUserPassword("someUser", "somePass");
 		
@@ -72,6 +77,11 @@ public class SmtpPlainAuthenticatorTests extends ATest {
 				}
 				return new String[] {};
 			}
+			
+			@Override
+			public void onCommandPart(String p) {
+				
+			}
 		});
 		SmtpUserPassword userPass = new SmtpUserPassword("someUser", "somePass");
 		
@@ -103,6 +113,11 @@ public class SmtpPlainAuthenticatorTests extends ATest {
 						return new String[] {"250 2.0.0 Authenticate Failed!"};
 				}
 				return new String[] {};
+			}
+			
+			@Override
+			public void onCommandPart(String p) {
+				
 			}
 		});
 		SmtpUserPassword userPass = new SmtpUserPassword("someUser", "somePass");

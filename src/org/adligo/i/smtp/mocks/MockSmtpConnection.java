@@ -5,7 +5,7 @@ import java.io.IOException;
 import org.adligo.i.log.client.Log;
 import org.adligo.i.log.client.LogFactory;
 import org.adligo.i.smtp.I_SmtpConnection;
-import org.adligo.i.smtp.models.I_EmailMessage;
+import org.adligo.i.smtp.models.I_EMailMessage;
 
 public class MockSmtpConnection implements I_SmtpConnection {
 	private static final Log log = LogFactory.getLog(MockSmtpConnection.class);
@@ -51,7 +51,7 @@ public class MockSmtpConnection implements I_SmtpConnection {
 		return ehlo;
 	}
 	@Override
-	public void send(I_EmailMessage message) throws IOException {
+	public void send(I_EMailMessage message) throws IOException {
 		// TODO Auto-generated method stub
 		
 	}
@@ -83,6 +83,10 @@ public class MockSmtpConnection implements I_SmtpConnection {
 	}
 	public void setCommandCallback(MockCommandCallback commandCallback) {
 		this.commandCallback = commandCallback;
+	}
+	@Override
+	public void sendCommandPart(String command) throws IOException {
+		commandCallback.onCommandPart(command);
 	}
 	
 }
