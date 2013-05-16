@@ -42,8 +42,18 @@ public class MainMailer {
 	private static String cc = "";
 	private static String bcc = "";
 	private static String fileName = "";
-	private static Pool<ReadOnlyDiskConnection> diskPool = new Pool<ReadOnlyDiskConnection>(new PoolConfigurationMutant<>("diskPool", new ReadOnlyDiskConnectionFactory(), 1));
+	private static Pool<ReadOnlyDiskConnection> diskPool = getDiskPool();
 	
+	public static Pool<ReadOnlyDiskConnection> getDiskPool() {
+		try {
+			return new Pool<ReadOnlyDiskConnection>(
+					new PoolConfigurationMutant<ReadOnlyDiskConnection>(
+							"diskPool", new ReadOnlyDiskConnectionFactory(), 1));
+		} catch (InvalidParameterException x) {
+			log.error(x.getMessage(), x);
+		}
+		return null;
+	}
 	
 	public static void main(String [] args) {
 		JSECommonInit.callLogDebug("MainMailer init");
