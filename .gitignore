@@ -1,0 +1,6 @@
+classes/
+test_output/
+test_failure.properties
+bin/
+classes_e/
+*.swp
