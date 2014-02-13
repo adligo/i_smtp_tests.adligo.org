@@ -1,4 +1,4 @@
-package org.adligo.i.smtp.mocks;
+package org.adligo.i.smtp_tests.mocks;
 
 public interface MockCommandCallback {
 	public void onCommandPart(String p);

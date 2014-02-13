@@ -1,10 +1,10 @@
-package org.adligo.i.smtp.authenticators;
+package org.adligo.i.smtp_tests.authenticators;
 
-import java.io.IOException;
-
-import org.adligo.i.adi.client.InvocationException;
-import org.adligo.i.smtp.mocks.MockCommandCallback;
-import org.adligo.i.smtp.mocks.MockSmtpConnection;
+import org.adligo.i.adi.shared.InvocationException;
+import org.adligo.i.smtp.authenticators.SmtpPlainAuthenticator;
+import org.adligo.i.smtp.authenticators.SmtpUserPassword;
+import org.adligo.i.smtp_tests.mocks.MockCommandCallback;
+import org.adligo.i.smtp_tests.mocks.MockSmtpConnection;
 import org.adligo.tests.ATest;
 
 public class SmtpPlainAuthenticatorTests extends ATest {

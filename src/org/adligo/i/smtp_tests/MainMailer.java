@@ -1,4 +1,4 @@
-package org.adligo.i.smtp;
+package org.adligo.i.smtp_tests;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -9,25 +9,28 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import org.adligo.i.adi.client.InvocationException;
+import org.adligo.i.adi.shared.InvocationException;
 import org.adligo.i.disk.I_InputProcessor;
 import org.adligo.i.disk.ReadOnlyDiskConnection;
 import org.adligo.i.disk.ReadOnlyDiskConnectionFactory;
-import org.adligo.i.log.client.Log;
-import org.adligo.i.log.client.LogFactory;
+import org.adligo.i.log.shared.Log;
+import org.adligo.i.log.shared.LogFactory;
 import org.adligo.i.pool.I_Pool;
 import org.adligo.i.pool.Pool;
 import org.adligo.i.pool.PoolConfigurationMutant;
+import org.adligo.i.smtp.SmtpConnection;
+import org.adligo.i.smtp.SmtpConnectionFactoryConfig;
+import org.adligo.i.smtp.SmtpConnectionFactoryConfigMutant;
 import org.adligo.i.smtp.authenticators.SmtpLoginAuthenticator;
 import org.adligo.i.smtp.authenticators.SmtpUserPassword;
+import org.adligo.i.smtp.models.EMailAttachmentInRam;
 import org.adligo.i.smtp.models.EMailAttachmentStream;
 import org.adligo.i.smtp.models.EMailMessageMutant;
 import org.adligo.i.smtp.models.I_EMailAttachmentStream;
-import org.adligo.i.smtp.models.EMailAttachmentInRam;
-import org.adligo.i.util.client.StringUtils;
+import org.adligo.i.util.shared.StringUtils;
 import org.adligo.jse.util.JSECommonInit;
-import org.adligo.models.core.client.EMailAddress;
-import org.adligo.models.core.client.InvalidParameterException;
+import org.adligo.models.core.shared.EMailAddress;
+import org.adligo.models.core.shared.InvalidParameterException;
 
 /**
  * example api usage

@@ -1,5 +1,6 @@
-package org.adligo.i.smtp;
+package org.adligo.i.smtp_tests;
 
+import org.adligo.i.smtp.BoundryGenerator;
 import org.adligo.tests.ATest;
 
 public class BoundryGeneratorTests extends ATest {

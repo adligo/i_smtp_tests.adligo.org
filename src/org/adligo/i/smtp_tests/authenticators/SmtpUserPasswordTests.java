@@ -1,5 +1,6 @@
-package org.adligo.i.smtp.authenticators;
+package org.adligo.i.smtp_tests.authenticators;
 
+import org.adligo.i.smtp.authenticators.SmtpUserPassword;
 import org.adligo.tests.ATest;
 
 public class SmtpUserPasswordTests extends ATest {

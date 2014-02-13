@@ -1,4 +1,4 @@
-package org.adligo.i.smtp;
+package org.adligo.i.smtp_tests;
 
 import org.adligo.tests.ATest;
 

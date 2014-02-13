@@ -1,9 +1,9 @@
-package org.adligo.i.smtp.mocks;
+package org.adligo.i.smtp_tests.mocks;
 
 import java.io.IOException;
 
-import org.adligo.i.log.client.Log;
-import org.adligo.i.log.client.LogFactory;
+import org.adligo.i.log.shared.Log;
+import org.adligo.i.log.shared.LogFactory;
 import org.adligo.i.smtp.I_SmtpConnection;
 import org.adligo.i.smtp.models.I_EMailMessage;
 
