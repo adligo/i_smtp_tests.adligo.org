@@ -4,3 +4,6 @@ test_failure.properties
 bin/
 classes_e/
 *.swp
+test_reports/
+i_smtp_tests*.jar
+
