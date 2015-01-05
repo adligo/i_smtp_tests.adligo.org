@@ -1,9 +1,11 @@
-classes/
+/bin/
 /build/
-test_output/
+/classes/
+/classes_e/
+/test_output/
 test_failure.properties
-bin/
-classes_e/
+
+
 *.swp
 test_reports/
 i_smtp_tests*.jar
